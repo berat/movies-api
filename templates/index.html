@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filmleri Listele</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+    <style>
+        body{font-family: 'PT Sans', sans-serif;width: 50%;margin: 0px auto;}
+        header{width: 390px;margin: 20px auto;}
+        input{width: 390px;height: 45px;font-size: 16px;padding: 0 10px;outline: none;background: #fafdff;border: 1px solid #dee8ef;}
+        ::placeholder{font-family: 'PT Sans', sans-serif;font-size: 16px;color: #5a7384}
+        main{display: flex;}
+        .poster{width: 250px;height: 350x;position: relative;}
+        img{width: 250px;height: 350px;border: 1px solid #ddd;}
+        span{position: absolute;bottom: 20px;right: 20px;background-color: #f0c35f; color: #000;font-size: 15px;padding: 5px 7px; border-radius: 5px;font-weight: thin;border: 1px solid rgba(0, 0, 0, 0.1)}
+        .text{margin-left: 20px;}
+    </style>
+</head>
+<body>
+    <header>
+        <form method="POST">
+        <input type="text" name="ara" id="ara" placeholder="aramak istediğin filmi gir">
+       </form>
+    </header>
+        <main id="content">
+            <div class="poster">
+                <img src="{{ movies['Poster'] }}"" alt="">
+                <span>imdb : {{ movies['imdbRating'] }}</span>
+            </div>
+            <div class="text">
+                <h1>{{ movies['Title'] }}</h1>
+                <p>{{ movies['Plot'] }}</p>
+                <i>Yönetmen: {{ movies['Director'] }}</i> <br>
+                <i>Oyuncular: {{ movies['Actors'] }}</i>
+            </div>
+        </main>
+</body>
+</html>
